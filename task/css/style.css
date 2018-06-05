@@ -1,0 +1,210 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#form1 {
+    width: 185px;
+    height: 230px;
+    margin-left: 59px;
+    margin-top: 10px;
+}
+
+#submit {
+    margin-top: 15px;
+    margin-left: 7px;
+    cursor: pointer;
+    border: none;
+    height: 25px;
+    color: #fff;
+    background: rgb(22, 180, 194);
+    border-radius: 5px;
+}
+
+#form2 {
+    width: 160px;
+    position: absolute;
+    top: 31px;
+    left: 77px;
+}
+
+#loginbtn {
+    margin-top: 5px;
+    cursor: pointer;
+    background: rgb(236, 17, 70);
+    border-radius: 5px;
+    border: none;
+    height: 22px;
+    width: 50px;
+    color: #fff;
+}
+
+#flex {
+    display: flex;
+    width: 900px;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.addbtn {
+    position: absolute;
+    top: 25px;
+    right: 115px;
+    cursor: pointer;
+    width: 120px;
+    height: 35px;
+    border: none;
+    text-align: center;
+    color: #fff;
+    background: rgb(49, 137, 188);
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.logout {
+    position: absolute;
+    right: 30px;
+    top: 17px;
+    color: #fff;
+    background: rgb(233, 65, 105);
+    cursor: pointer;
+    width: 70px;
+    height: 50px;
+    border: none;
+    border-radius: 7px;
+}
+
+#par {
+    margin: 0;
+    margin-top: 5px;
+}
+
+.flex {
+    display: flex;
+    width: 1135px;
+    margin-left: 187px;
+    flex-wrap: wrap;
+}
+
+.flexitems {
+    width: 150px;
+    height: 150px;
+    box-shadow: 2px 2px 2px 2px #ddd;
+    border: 1px solid black;
+    margin-top: 15px;
+    border-radius: 12px;
+    background: rgb(1,200,366);
+    margin-left: 105px;
+    text-align: center;
+}
+
+.flexitems p {
+    border-bottom: 1.5px dotted black;
+}
+
+.flexitems p:last-child {
+    border: none
+}
+
+.paragraph1 {
+    width: 60px;
+    margin-left: 45px;
+    color: transparent
+}
+
+#form3 {
+    width: 200px;
+    display: flex;
+    margin-left: 54px;
+    flex-direction: column;
+}
+
+#form3 label {
+    text-align: center
+}
+
+#addproduct {
+    width: 100px;
+    height: 25px;
+    border-radius: 11px;
+    margin-left: 53px;
+    cursor: pointer;
+    color: white;
+    background: rgb(246, 168, 40);
+    border: none;
+    font-size: 1.1em;
+}
+
+#showpswd {
+    position: absolute;
+    cursor: pointer;
+    background: rgb(22, 180, 194);
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    height: 22px;
+}
+
+#_showpswd {
+    position: absolute;
+    cursor: pointer;
+    background: rgb(22, 180, 194);
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    height: 22px;
+}
+
+.formdiv {
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    margin-left: 430px;
+    text-align: center;
+    height: 280px;
+    box-shadow: 0px 0px 0px 1px #ddd;
+    border-radius: 20px;
+    background: #f4f4f4;
+}
+
+.formdiv1 {
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    margin-left: 365px;
+    text-align: center;
+    height: 280px;
+    position: absolute;
+    box-shadow: 0px 0px 0px 1px #ddd;
+    border-radius: 20px;
+    background: #f4f4f4;
+    top: 7px;
+    left: 410px;
+}
+
+#alert {
+    position: absolute;
+    top: 70px;
+    left: 470px;
+}
+
+.heading {
+    width: 250px;
+    border: 1px solid #ddd;
+    margin: auto;
+    color: #888888;
+    text-align: center;
+    background: rgb(245, 245, 246);
+    border-radius: 12px;
+}
+
+.formdiv2 {
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    height: 280px;
+    box-shadow: 0px 0px 0px 1px #ddd;
+    border-radius: 20px;
+    background: #f4f4f4;
+}

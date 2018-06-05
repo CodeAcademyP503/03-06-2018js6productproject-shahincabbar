@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="formdiv">
+        <form action="#" id="form1">
+            <label for="name">Name</label>
+            <input type="text" name="" autocomplete="off" id="name">
+            <br>
+            <label for="email">E-mail</label>
+            <input type="text" name="" id="email">
+            <br>
+            <label for="password">Password</label>
+            <input type="password" name="" id="password">
+            <button id="showpswd" onmouseover="Showpswd()" onmouseout="Hidepswd()">Show</button>
+            <br>
+            <label for="rewrite password">Repeat password</label>
+            <input type="password" name="" id="rewrite-password">
+            <button id="_showpswd" onmouseover="Showpswd1()" onmouseout="Hidepswd1()">Show</button>
+            <br>
+            <input type="submit" name="" id="submit" onclick="CreateUser()" value="Create new account" id="">
+        </form>
+    </div>
+
+    <div class="formdiv1">
+        <form id="form2" action="#">
+            <label for="emailcheck">E-mail</label>
+            <input type="text" name="" id="emailcheck" placeholder="Enter your e-mail">
+            <br>
+            <label for="passwordcheck">Password</label>
+            <input type="password" name="" id="passwordcheck" placeholder="Enter your password">
+            <br>
+            <button id="loginbtn" type="button" onclick="Login()">Login</button>
+        </form>
+    </div>
+
+    <script>
+        location.href = "index.html?#"
+        let userArray = [];
+
+        function user(_name, _email, _password) {
+            this.name = _name;
+            this.email = _email;
+            this.password = _password;
+            return this
+        }
+        function CreateUser() {
+            let Name = document.getElementById("name").value;
+            let Email = document.getElementById("email").value;
+            let Password = document.getElementById("password").value;
+            let repassword = document.getElementById("rewrite-password").value;
+            if (Name != "" && Name != undefined && Name != null && Name.length > 1) {
+                if (Email.indexOf("@") > 0) {
+                    if (Password.length > 0) {
+                        if (repassword == Password) {
+                            alert("Your registration is succesful");
+                            let newuser = new user(Name, Email, Password);
+                            userArray.push(newuser);
+                            Clear();
+                            return false;
+
+                        }
+                        else {
+                            alert("Your password is incorrect")
+                        }
+                    }
+                    else {
+                        alert("Please write your password")
+                    }
+                }
+                else {
+                    alert("Please write your e-mail")
+                }
+            }
+            else {
+                alert("Please write your name")
+            }
+        }
+        function Showpswd() {
+            let pswd = document.getElementById("password");
+            pswd.type = "text";
+            document.getElementById("showpswd").innerText = "Hide";
+        }
+        function Hidepswd() {
+            let _psw = document.getElementById("password");
+            _psw.type = "password";
+            document.getElementById("showpswd").innerText = "Show";
+        }
+        function Showpswd1() {
+            let pswd = document.getElementById("rewrite-password");
+            pswd.type = "text";
+            document.getElementById("_showpswd").innerText = "Hide";
+        }
+        function Hidepswd1() {
+            let _psw = document.getElementById("rewrite-password");
+            _psw.type = "password";
+            document.getElementById("_showpswd").innerText = "Show";
+        }
+        function Login() {
+            let _emailcheck = document.getElementById("emailcheck").value;
+            let _passwordcheck = document.getElementById("passwordcheck").value;
+            for (let elem of userArray) {
+                if (_emailcheck == elem.email) {
+                    if (_passwordcheck == elem.password) {
+                        document.location.href = 'products.html';
+                        JSON.stringify(elem);
+                        localStorage.User = JSON.stringify(elem);
+                    }
+                    else {
+                        alert("Your password is incorrect")
+                    }
+                }
+                else {
+                    alert("Your e-mail is incorrect")
+                }
+            }
+        }
+        function Clear() {
+            let Name = document.getElementById("name").value = "";
+            let Email = document.getElementById("email").value = "";
+            let Password = document.getElementById("password").value = "";
+            let repassword = document.getElementById("rewrite-password").value = "";
+        }
+
+    </script>
+</body>
+
+</html>

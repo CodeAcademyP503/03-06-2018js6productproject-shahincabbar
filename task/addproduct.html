@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="formdiv2">
+        <form action="#" id="form3">
+
+            <label for="productname">Name</label>
+            <input type="text" name="" id="productname">
+            <label for="productmodel">Model</label>
+            <input type="text" name="" id="productmodel">
+            <label for="productprice">Price</label>
+            <input type="number" name="" min="1" id="productprice">
+            <label for="productcolor">Color</label>
+            <input type="text" name="" id="productcolor">
+            <br>
+            <button id="addproduct" type="button" onclick="Addproduct()">Add</button>
+        </form>
+    </div>
+
+    <script>
+
+        function Products(name, model, price, color) {
+            this.name = name;
+            this.model = model;
+            this.price = price;
+            this.color = color;
+            return this;
+        }
+        let arr = [];
+        let k = JSON.parse(localStorage.y);
+        arr = k;
+        function Addproduct() {
+            let prod_name = document.getElementById("productname").value;
+            let prod_model = document.getElementById("productmodel").value;
+            let prod_price = document.getElementById("productprice").value;
+            let prod_color = document.getElementById("productcolor").value;
+            if (prod_name != "" && prod_name != undefined && prod_name.length > 3) {
+                if (prod_model != "" && prod_model != undefined && prod_model.length > 3) {
+                    if (prod_price > 0) {
+                        if (prod_color != "" && prod_color != undefined && prod_color.length > 2) {
+                            let newproduct = new Products(prod_name, prod_model, prod_price, prod_color);
+                            arr.push(newproduct)
+                            document.location.href = "products.html";
+                            JSON.stringify(newproduct);
+                            localStorage.y = JSON.stringify(arr);
+                        }
+                        else {
+                            alert("Please write color of new product")
+                        }
+
+                    }
+                    else {
+                        alert("Please write price of new product.It's value must be min 1")
+                    }
+                }
+                else {
+                    alert("Please write model of new product.It must be min 4 characters");
+                }
+            }
+            else {
+                alert("Please write name of new product.It must be min 4 charachters");
+            }
+
+        }
+    </script>
+</body>
+
+</html>
